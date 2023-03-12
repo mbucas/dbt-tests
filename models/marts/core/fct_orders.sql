@@ -7,7 +7,7 @@ payments as (
 order_payments as (
     select
         order_id,
-        sum(payment_amount / 100) as order_amount
+        sum(payment_amount) as order_amount
     from payments
     where payment_status = 'success'
     group by order_id
